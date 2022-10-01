@@ -5,15 +5,15 @@ import ibm_db
 
 app = Flask(__name__)
 
-dsn_hostname = "b70af05b-76e4-4bca-a1f5-23dbb4c6a74e.c1ogj3sd0tgtu0lqde00.databases.appdomain.cloud" # e.g.: "54a2f15b-5c0f-46df-8954-7e38e612c2bd.c1ogj3sd0tgtu0lqde00.databases.appdomain.cloud"
-dsn_uid = "jlm87173"        # e.g. "abc12345"
-dsn_pwd = "NXflU8HNwZLcF7T2"      # e.g. "7dBZ3wWt9XN6$o0J"
+dsn_hostname = "b70af05b-76e4-4bca-a1f5-23dbb4c6a74e.c1ogj3sd0tgtu0lqde00.databases.appdomain.cloud" 
+dsn_uid = "jlm87173"        
+dsn_pwd = "NXflU8HNwZLcF7T2"      
 
 dsn_driver = "{IBM DB2 ODBC DRIVER}"
-dsn_database = "bludb"            # e.g. "BLUDB"
-dsn_port = "32716"                # e.g. "32733" 
-dsn_protocol = "TCPIP"            # i.e. "TCPIP"
-dsn_security = "SSL"              #i.e. "SSL"
+dsn_database = "bludb"            
+dsn_port = "32716"                
+dsn_protocol = "TCPIP"          
+dsn_security = "SSL"              
 
 dsn = (
     "DRIVER={0};"
