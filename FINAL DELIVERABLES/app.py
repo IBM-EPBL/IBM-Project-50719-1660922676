@@ -8,7 +8,7 @@ import re
 from flask_db2 import DB2
 import ibm_db
 import ibm_db_dbi
-from sendemail import sendgridmail,sendmail
+from sendemail import sendmail
 
 # from gevent.pywsgi import WSGIServer
 import os
@@ -205,15 +205,6 @@ def login():
     return render_template('login.html', msg = msg)
 
 
-
-       
-
-
-
-
-
-
-
 @app.route("/add")
 def adding():
     return render_template('add.html')
@@ -282,7 +273,8 @@ def addexpense():
         s = temp[0]
 
     if total > int(s):
-       msg = "Limit has been exceeded" 
+        msg = "Hello " + session['username'] + ", " + "you have exceeded your set monthly limit of Rs. " + s + "/-"; 
+        sendmail(msg,session['email'])  
     
     return redirect("/display")
 
