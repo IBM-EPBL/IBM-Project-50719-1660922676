@@ -1,0 +1,65 @@
+
+
+{% extends 'base.html' %}
+{% block body %} 
+
+<div class="container ">
+    <h3 class="mt-3"><br>Expenses</h3>
+
+
+
+    {% if expense is defined %}
+    {% for row in expense  %}
+    
+   
+    <div class="row">
+        
+        <div class="col-md-12">
+            <div class="card shadow-sm mb-2 bg-white rounded"></div> 
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        
+                        <span class="btn btn-outline-dark">{{row[2]}}</span> </div>
+                    <div class="col-md-2 mt-3"><H6>{{row[3]}}</H6></div>
+                    <div class="col-md-2 mt-3" > ₹<span> {{row[4]}} </div>
+                    <div class="col-md-2 mt-3">
+                        <span class="badge">{{row[5]}}</span>
+                    </div>
+
+                    <div class="col-md-2 mt-3">
+                        <span class="badge">{{row[6]}}</span>
+                        </div>
+                        <div class="col-md-1 mt-3">
+                            <a href="/edit/{{row[0]}}  "   class="btn btn-sm btn-success">Edit</a>
+                        </div>
+
+                        
+
+                        <div class="col-md-1 mt-3">
+                                <a href="/delete/{{row[0]}}" class="btn btn-sm btnDelete btn-success">Delete</a>
+                         </div>
+                        
+                   </div>
+            </div>
+
+        </div>
+    </div>
+    <!--when no DATA-Found-->
+   {% else %}
+   <div class="card shadow-sm mb-2 bg-white rounded "></div> 
+   <div class="col-md-2">
+    <br>    
+    <span class="btn btn-outline-dark">You don't have any expenses logged currently.<br>Go to Add to log your expenses</span> </div>
+    </div>
+
+
+    {% endfor %}
+    {% endif %}
+   
+   </div>
+</div>
+{% endblock %}
+
+
+ 

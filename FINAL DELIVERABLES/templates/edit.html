@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block body %} 
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-6">
+            <h3><br><br>Edit Expense details</h3>
+            <form action="/update/{{expenses[0]}}" method="POST">
+
+
+                    <input type="hidden" class="form-control"   name="" value = "{{expenses[0]}}" id="">
+                
+                <div class="form-group">
+                     <label for="">Date</label> 
+                     <input class="form-control"  type="datetime-local" name="date" value="{{expenses[2]}}"  id="date"></div>
+                     
+                     
+                    
+
+             <script type="text/javascript">
+                       var d = new Date(value="{{expenses[2]}}" );
+                       var elem = document.getElementById("date"); 
+                       elem.value = d.toISOString().slice(0,16);
+                     </script>
+
+
+
+                <div class="form-group"> <label for="">Expense name</label> 
+                    <input class="form-control" type="text" name="expensename" value="{{expenses[3]}}" id="expensename">
+                </div>
+                <div class="form-group">
+                     <label for="">Expense Amount</label> 
+                      <input class="form-control"  type="number" min="0" name="amount" value="{{expenses[4]}}" id="amount">
+                </div>
+
+                <div class="form-group">
+                    <label for=""></label> 
+                    <select class="form-control" name="paymode" value="{{expenses[5]}}"  id="paymode">
+                        <option selected hidden>{{expenses[5]}}</option>
+                        <option value="Cash">Cash</option>
+                        <option value="Debit">Debit</option>
+                        <option value="Credit">Credit</option>
+                        <option value="UPI">UPI</option>
+                        <option value="Net Banking">Net Banking</option>
+                    
+                    </select>
+                
+                 <div class="form-group">
+                    <label for=""></label>
+                    <select class="form-control" name="category" value="{{expenses[6]}}"  id="category">
+
+                         <option  selected hidden>{{expenses[6]}}</option>
+                        <option value="Food">food</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Business ">Business</option>
+                        <option value="Rent">Rent</option>
+                        <option value="EMI">EMI</option>
+                        <option value="Other">other</option>
+            
+                    </select>
+                </div>
+
+                <input class="btn btn-danger" type="submit" value="Update" id="">
+        
+            </form>
+        </div>
+    </div>
+    
+</div>
+   
+    {% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block body %} 
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-6 ">
+            <h3 style="text-align: center">            <br><br>
+                Set a Limit<br><br></h3>
+        <p> Your current monthly limit is ₹ {{y}} </p>
+
+
+        <form action="/limitnum" method="POST">
+
+            <p> Enter your new Monthly limit to avoid overspending</p> <br/>
+            <input type="number" name="number" required/> <span> 
+                <button class="btn btn-success" style="float: right;" type="submit">Enter</button>
+            </span>
+            
+        </form>
+</div>
+{% endblock %}
