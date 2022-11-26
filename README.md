@@ -17,7 +17,7 @@ Personal finance applications will ask users to add their expenses and based on 
 ## TEAM MEMBERS
 
 - SATHWIK S
-- RISHU=I SUNDER
+- RISHI SUNDER
 - VENKATA SUHAAS VARMA
 - ADITHYA LAKSHMANAN
 
